@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
   
   
   app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-// Set up the database connection
+// Set up the database
 mongoose.connect('mongodb+srv://tirthofficials:Tirth07@cluster0.1qnflav.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
