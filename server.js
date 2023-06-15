@@ -11,7 +11,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3000", "https://mern-image-app.onrender.com"],
+}));
+// app.use(express.static(path.join(__dirname, '../client/build')));
+// app.get('*', function(req, res){
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
+
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 const storage = multer.diskStorage({
     destination: path.join(__dirname, 'uploads'),
@@ -24,7 +31,7 @@ const storage = multer.diskStorage({
   
   app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Set up the database
-mongoose.connect('mongodb+srv://tirthofficials:Tirth07@cluster0.1qnflav.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://tirthofficials:RUp1IgU7FGkb7UvR@cluster0.1qnflav.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
