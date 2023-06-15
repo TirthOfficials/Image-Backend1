@@ -10,10 +10,10 @@ const PORT = 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
-
-app.use(cors({
-  origin: ["http://localhost:3000", "https://mern-image-app.onrender.com"],
-}));
+app.use(cors());
+// app.use(cors({
+//   origin: ["http://localhost:3000", "https://mern-image-app.onrender.com"],
+// }));
 // app.use(express.static(path.join(__dirname, '../client/build')));
 // app.get('*', function(req, res){
 //   res.sendFile(path.join(__dirname, "../client/build/index.html"));
